@@ -1,4 +1,4 @@
-import { Mail, Heart } from "lucide-react";
+import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const NAV = [
@@ -85,9 +85,7 @@ export default function Footer() {
           className="mt-8 text-center text-xs flex flex-wrap items-center justify-center gap-1.5"
           style={{ color: "var(--text-secondary)", opacity: 0.8 }}
         >
-          <span>© {year} Mohammad Sarfuddin. Handcrafted with</span>
-          <Heart size={12} style={{ color: "#ef4444", fill: "#ef4444" }} />
-          <span>• B.Tech CSE, Babu Banarasi Das University</span>
+          <span>© {year} Mohammad Sarfuddin • B.Tech CSE, Babu Banarasi Das University</span>
         </div>
       </div>
     </footer>
