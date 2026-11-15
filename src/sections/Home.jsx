@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Code2, Server, Globe, BrainCircuit, Mail } from "lucide-react";
+import { ArrowRight, Download, Code2, Server, Globe, BrainCircuit, Mail, Sparkles } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { RESUME_PATH, RESUME_FILENAME } from "../constants/resume";
 
@@ -19,7 +19,7 @@ function Typewriter({ words }) {
       if (!deleting && sub < current.length) {
         setSub((s) => s + 1);
       } else if (!deleting && sub === current.length) {
-        setTimeout(() => setDeleting(true), 1400);
+        setTimeout(() => setDeleting(true), 1500);
       } else if (deleting && sub > 0) {
         setSub((s) => s - 1);
       } else {
@@ -45,31 +45,31 @@ const SOCIALS = [
   { icon: Mail,         label: "Email",    href: "mailto:sarfuddin9336@gmail.com" },
 ];
 
-/* ── Highlights ─────────────────────────────────────── */
+/* ── Real Student Highlights ────────────────────────── */
 const HIGHLIGHTS = [
   {
     icon: Code2,
-    title: "Java Development",
-    desc: "Core Java, OOP, Data Structures & Algorithms",
+    title: "Core Java & OOP",
+    desc: "Strong foundation in Object-Oriented principles, Collections & clean modular code.",
     color: "#F59E0B",
   },
   {
     icon: Server,
-    title: "Backend Development",
-    desc: "RESTful APIs, Spring Boot, Node.js",
+    title: "Python & AI Projects",
+    desc: "Built practical software like PaperForge & KisanMitra AI using Streamlit & SQLite3.",
     color: "#22D3EE",
   },
   {
-    icon: Globe,
-    title: "Web Development",
-    desc: "React, HTML/CSS, Tailwind, responsive design",
-    color: "#3B82F6",
+    icon: BrainCircuit,
+    title: "50+ LeetCode Solved",
+    desc: "Consistent problem solver focusing on Data Structures, Arrays, Strings & Algorithms.",
+    color: "#34D399",
   },
   {
-    icon: BrainCircuit,
-    title: "Problem Solving",
-    desc: "LeetCode, algorithm design & optimization",
-    color: "#34D399",
+    icon: Globe,
+    title: "B.Tech CSE @ BBDU",
+    desc: "2023 – 2027 batch with 7.8/10 CGPA, dedicated to computer science fundamentals.",
+    color: "#3B82F6",
   },
 ];
 
@@ -109,10 +109,10 @@ export default function Home() {
             animate="visible"
             className="flex flex-col items-center lg:items-start text-center lg:text-left order-last lg:order-first"
           >
-            {/* Hello label */}
+            {/* Student label */}
             <motion.div variants={fadeUp(0)} className="mb-4">
               <span
-                className="inline-block text-xs font-semibold tracking-[0.22em] uppercase px-3.5 py-1.5 rounded-full"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase px-3.5 py-1.5 rounded-full"
                 style={{
                   color: "var(--cyan)",
                   background: "rgba(34,211,238,0.08)",
@@ -120,14 +120,15 @@ export default function Home() {
                   fontFamily: "Manrope, sans-serif",
                 }}
               >
-                Hello, I'm
+                <Sparkles size={12} className="text-cyan-400" />
+                B.Tech CSE Student • BBD University, Lucknow
               </span>
             </motion.div>
 
             {/* Name */}
             <motion.h1
               variants={fadeUp(0.1)}
-              className="text-4xl sm:text-5xl lg:text-[3.6rem] xl:text-[4.2rem] font-extrabold leading-tight mb-3 font-['Manrope']"
+              className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold leading-tight mb-3 font-['Manrope']"
             >
               <span className="gradient-text">Mohammad</span>
               <br />
@@ -140,18 +141,27 @@ export default function Home() {
               className="text-lg sm:text-xl lg:text-2xl font-semibold mb-5 font-['Manrope'] min-h-[1.8em]"
               style={{ color: "var(--electric-blue)" }}
             >
-              <Typewriter words={["Software Developer", "Java Developer", "Backend Engineer"]} />
+              <Typewriter
+                words={[
+                  "Software Developer",
+                  "Java & Python Programmer",
+                  "Problem Solver • LeetCode 50+",
+                  "Computer Science Undergrad",
+                ]}
+              />
             </motion.div>
 
-            {/* Introduction */}
+            {/* Natural Authentic Student Introduction */}
             <motion.p
               variants={fadeUp(0.3)}
               className="text-base sm:text-lg leading-relaxed max-w-lg mb-8"
               style={{ color: "var(--text-secondary)" }}
             >
-              I'm a Computer Science Engineering student passionate about building
-              modern software applications, developing efficient backend systems and
-              solving real-world problems through technology.
+              Hey! I'm a Computer Science student passionate about writing clean code in{" "}
+              <span className="text-slate-100 font-semibold">Java</span> &amp;{" "}
+              <span className="text-slate-100 font-semibold">Python</span>, building practical
+              software like PaperForge and KisanMitra AI, and sharpening my algorithmic problem-solving
+              on LeetCode. I love turning concepts from class into real, working applications.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -165,7 +175,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Explore My Work
+                Explore My Projects
                 <ArrowRight size={16} />
               </motion.a>
 
@@ -235,7 +245,7 @@ export default function Home() {
           className="flex flex-col items-center gap-1 mt-6 lg:mt-0 lg:absolute lg:bottom-8 lg:left-1/2 lg:-translate-x-1/2"
         >
           <span className="text-xs tracking-widest uppercase" style={{ color: "var(--text-secondary)", opacity: 0.6 }}>
-            Scroll
+            Scroll Down
           </span>
           <div className="w-px h-10" style={{ background: "linear-gradient(to bottom, rgba(59,130,246,0.6), transparent)" }} />
         </motion.div>

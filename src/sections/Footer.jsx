@@ -82,12 +82,12 @@ export default function Footer() {
         </div>
 
         <div
-          className="mt-8 text-center text-xs flex items-center justify-center gap-1.5"
-          style={{ color: "var(--text-secondary)", opacity: 0.7 }}
+          className="mt-8 text-center text-xs flex flex-wrap items-center justify-center gap-1.5"
+          style={{ color: "var(--text-secondary)", opacity: 0.8 }}
         >
-          © {year} Mohammad Sarfuddin. Built with
-          <Heart size={12} style={{ color: "var(--electric-blue)", fill: "var(--electric-blue)" }} />
-          using React &amp; Tailwind CSS.
+          <span>© {year} Mohammad Sarfuddin. Handcrafted with</span>
+          <Heart size={12} style={{ color: "#ef4444", fill: "#ef4444" }} />
+          <span>• B.Tech CSE, Babu Banarasi Das University</span>
         </div>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Calendar } from "lucide-react";
+import { GraduationCap, Award, Calendar, BookOpen } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 32 },
@@ -10,26 +10,39 @@ const fadeUp = (delay = 0) => ({
   },
 });
 
-const EDUCATION = [
+const TIMELINE = [
   {
     degree: "B.Tech — Computer Science & Engineering",
     institution: "Babu Banarasi Das University",
     location: "Lucknow, Uttar Pradesh",
     duration: "2023 – 2027",
     description:
-      "Studying core CSE subjects with CGPA 7.8/10, including Data Structures, Algorithms, Database Management Systems, Operating Systems, Software Engineering, and Web Technologies.",
+      "Pursuing B.Tech with an academic score of 7.8 CGPA. Core coursework covers Data Structures & Algorithms, Object-Oriented Programming (Java), Operating Systems, DBMS, Computer Networks, and Software Engineering.",
     icon: GraduationCap,
     color: "#3B82F6",
+    badge: "Current Degree • 7.8 CGPA",
   },
   {
-    degree: "High & Intermediate",
+    degree: "Data Science & Artificial Intelligence Training",
+    institution: "GRASTech",
+    location: "Lucknow, Uttar Pradesh",
+    duration: "2026",
+    description:
+      "Completed hands-on industrial training on Python for Data Science, data preprocessing, machine learning algorithms, model evaluation, and integrating AI capabilities into practical applications.",
+    icon: BookOpen,
+    color: "#8B5CF6",
+    badge: "Professional Training",
+  },
+  {
+    degree: "High School & Intermediate (Science & Mathematics)",
     institution: "Uttar Pradesh State Board of High School and Intermediate Education",
     location: "Uttar Pradesh",
     duration: "2020 – 2022",
     description:
-      "Completed secondary and higher secondary education with Science and Mathematics as core subjects.",
+      "Completed secondary (High School) and senior secondary (Intermediate) education with a core concentration in Physics, Chemistry, and Mathematics (PCM).",
     icon: Award,
     color: "#22D3EE",
+    badge: "Schooling",
   },
 ];
 
@@ -58,11 +71,14 @@ export default function Experience() {
               fontFamily: "Manrope, sans-serif",
             }}
           >
-            Background
+            Academic Journey
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-['Manrope'] gradient-text">
-            Education
+            Education & Training
           </h2>
+          <p className="mt-3 text-sm max-w-lg mx-auto" style={{ color: "var(--text-secondary)" }}>
+            Formal computer science engineering education, specialized AI training, and academic foundations.
+          </p>
         </motion.div>
 
         {/* Timeline */}
@@ -70,10 +86,10 @@ export default function Experience() {
           {/* Vertical line */}
           <div
             className="absolute left-6 top-0 bottom-0 w-px hidden sm:block"
-            style={{ background: "linear-gradient(to bottom, rgba(59,130,246,0.5), rgba(59,130,246,0.05))" }}
+            style={{ background: "linear-gradient(to bottom, rgba(59,130,246,0.5), rgba(139,92,246,0.3), rgba(34,211,238,0.1))" }}
           />
 
-          {EDUCATION.map(({ degree, institution, location, duration, description, icon: Icon, color }, i) => (
+          {TIMELINE.map(({ degree, institution, location, duration, description, icon: Icon, color, badge }, i) => (
             <motion.div
               key={degree}
               variants={fadeUp(i * 0.15)}
@@ -92,7 +108,7 @@ export default function Experience() {
 
               {/* Card */}
               <div className="flex-1 highlight-card">
-                <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                   <h3
                     className="text-base font-bold font-['Manrope']"
                     style={{ color: "var(--text-primary)" }}
@@ -111,12 +127,18 @@ export default function Experience() {
                   </span>
                 </div>
 
-                <div
-                  className="text-sm font-semibold mb-1 font-['Manrope']"
-                  style={{ color }}
-                >
-                  {institution}
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span
+                    className="text-sm font-semibold font-['Manrope']"
+                    style={{ color }}
+                  >
+                    {institution}
+                  </span>
+                  <span className="text-xs px-2 py-0.5 rounded-md" style={{ background: `${color}15`, color, border: `1px solid ${color}30` }}>
+                    {badge}
+                  </span>
                 </div>
+
                 <div className="text-xs mb-3" style={{ color: "var(--text-secondary)" }}>
                   {location}
                 </div>
