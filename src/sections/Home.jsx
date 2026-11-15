@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Code2, Server, Globe, BrainCircuit, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, Download, Code2, Server, Globe, BrainCircuit, Mail } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { RESUME_PATH, RESUME_FILENAME } from "../constants/resume";
 
@@ -109,22 +109,6 @@ export default function Home() {
             animate="visible"
             className="flex flex-col items-center lg:items-start text-center lg:text-left order-last lg:order-first"
           >
-            {/* Student label */}
-            <motion.div variants={fadeUp(0)} className="mb-4">
-              <span
-                className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase px-3.5 py-1.5 rounded-full"
-                style={{
-                  color: "var(--cyan)",
-                  background: "rgba(34,211,238,0.08)",
-                  border: "1px solid rgba(34,211,238,0.25)",
-                  fontFamily: "Manrope, sans-serif",
-                }}
-              >
-                <Sparkles size={12} className="text-cyan-400" />
-                B.Tech CSE Student • BBD University, Lucknow
-              </span>
-            </motion.div>
-
             {/* Name */}
             <motion.h1
               variants={fadeUp(0.1)}
